@@ -1,0 +1,1 @@
+from app.ocr.views import ocr_bp 

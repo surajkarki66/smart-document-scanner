@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="mt-5">
+    <h2>Document Scanner</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="images" class="form-label">Upload Images for Scanning</label>
+            <input class="form-control" type="file" id="images" name="images" multiple>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
