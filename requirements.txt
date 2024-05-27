@@ -3,3 +3,7 @@ Werkzeug
 flask_compress
 flask_wtf
 flask_sslify
+python-docx
+fpdf
+pillow
+pytesseract
