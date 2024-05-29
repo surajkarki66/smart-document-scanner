@@ -1,0 +1,15 @@
+version: "4"
+services:
+  smart_document_scanner:
+    container_name: smart_document_scanner
+    build: .
+    command: bash -c "gunicorn 'app:create_app()' --bind 0.0.0.0:8080 --reload"
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 8080:8080
+
+    env_file:
+      - .env
+  
+    restart: always
