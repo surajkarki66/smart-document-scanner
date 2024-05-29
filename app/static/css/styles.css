@@ -1,3 +1,20 @@
 /* static/css/styles.css */
 body {
 }
+.navbar-brand {
+  color: rgb(236, 229, 229);
+}
+.navbar-brand:hover {
+  color: orange !important;
+}
+.nav-link {
+  color: rgb(236, 229, 229);
+}
+.nav-link:hover {
+  color: orange !important;
+}
+
+
+/* .navbar-toggler {
+  color: black;
+} */

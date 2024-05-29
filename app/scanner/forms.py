@@ -10,7 +10,7 @@ def file_count_limit(max_count: int, message: str) -> any:
     return _file_count_limit
 
 
-class OCRForm(FlaskForm):
+class ScannerForm(FlaskForm):
     images = MultipleFileField('Images', validators=[
         FileRequired(message='Please select at least one image.'),
         FileAllowed(['jpg', 'png', 'jpeg', 'heic'],
@@ -18,7 +18,10 @@ class OCRForm(FlaskForm):
         FileSize(max_size=7 * 1024 * 1024,
                  message='File size should not exceed 7 MB.'),
         file_count_limit(
-            max_count=15, message="You cannot upload more than 15 images.")
+            max_count=15,  message="You cannot upload more than 15 images")
     ])
-    format = SelectField('Format', choices=[('pdf', 'Pdf'), ('docx', 'Docx')])
+    document_effect = SelectField('Document Effect Type', choices=[
+                                  ('grayscale', 'Grayscale'), ('colored', 'Colored')])
+    out_file_type = SelectField('Output File Type', choices=[
+                                ('pdf', 'Pdf'), ('image', 'Image')])
     submit = SubmitField('Submit')

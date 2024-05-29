@@ -5,7 +5,7 @@ from flask import Blueprint, render_template, send_file, flash, redirect, reques
 
 
 from app.ocr.forms import OCRForm
-from app.ocr.utils import create_pdf, create_docx
+from app.core.utils import create_pdf, create_docx
 
 ocr_bp = Blueprint('ocr', __name__)
 
@@ -14,16 +14,16 @@ ocr_bp = Blueprint('ocr', __name__)
 def ocr_view():
     form = OCRForm()
     if form.validate_on_submit():
-        files = form.files.data
-        if not files:
-            flash('No file part!', 'error')
+        images = form.images.data
+        if not images:
+            flash('No image part!', 'error')
             return redirect(request.url)
 
         text_output = []
-        for file in files:
+        for image in images:
             try:
-                image = Image.open(file)
-                text = pytesseract.image_to_string(image)
+                img = Image.open(image)
+                text = pytesseract.image_to_string(img)
                 text_output.append(text)
 
             except Exception as e:

@@ -7,3 +7,7 @@ python-docx
 fpdf
 pillow
 pytesseract
+opencv-python
+scipy
+imutils
+img2pdf
