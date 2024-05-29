@@ -7,6 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      APP_NAME: ${{secrets.APP_NAME}}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DEBUG: ${{ secrets.DEBUG }}
+      SSL_DISABLE: ${{ secrets.SSL_DISABLE }}
 
     steps:
       - name: Checkout code
@@ -39,4 +44,3 @@ jobs:
 
       - name: Run application
         run: python manage.py
-    
