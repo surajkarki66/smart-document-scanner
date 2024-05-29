@@ -41,6 +41,3 @@ jobs:
 
       - name: Run tests
         run: python -m unittest discover -s tests
-
-      - name: Run application
-        run: python manage.py
