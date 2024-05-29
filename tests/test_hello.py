@@ -22,7 +22,7 @@ class TestHelloWorld(unittest.TestCase):
     def test_hello_world(self):
         response = self.client.get(url_for('main.index'))
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Hello, World!', response.data)
+        self.assertIn(b'Smart Scanner', response.data)
 
 if __name__ == '__main__':
     unittest.main()
