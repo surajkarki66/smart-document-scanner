@@ -11,7 +11,8 @@ def create_pdf(texts: list[str]) -> BytesIO:
     pdf = FPDF()
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
-    pdf.set_font("Arial", size=12)
+    pdf.add_font("DejaVu", "", "DejaVuSans.ttf", uni=True)
+    pdf.set_font("DejaVu", size=12)
 
     for text in texts:
         pdf.multi_cell(0, 10, text)

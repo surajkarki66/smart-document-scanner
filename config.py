@@ -17,6 +17,8 @@ if os.path.exists('.env'):
 class Config:
     APP_NAME = os.environ.get('APP_NAME')
     DEBUG = os.environ.get('DEBUG')
+    TESTING = True 
+    
     if os.environ.get('SECRET_KEY'):
         SECRET_KEY = os.environ.get('SECRET_KEY')
     else:
@@ -33,6 +35,7 @@ class Config:
         syslog_handler = SysLogHandler()
         syslog_handler.setLevel(logging.WARNING)
         app.logger.addHandler(syslog_handler)
+        
 
 
 config = Config

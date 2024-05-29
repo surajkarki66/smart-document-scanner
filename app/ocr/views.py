@@ -27,7 +27,7 @@ def ocr_view():
                 text_output.append(text)
 
             except Exception as e:
-                flash('Error processing file!', 'error')
+                flash(f'Error processing file!', 'error')
                 return redirect(request.url)
 
         doc_format = form.format.data
