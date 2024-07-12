@@ -17,11 +17,11 @@ if os.path.exists('.env'):
 class Config:
     APP_NAME = os.environ.get('APP_NAME')
     DEBUG = os.environ.get('DEBUG')
-    TESTING = True 
-    SERVER_NAME = 'localhost.localdomain'
+    TESTING = True
     APPLICATION_ROOT = '/'
     PREFERRED_URL_SCHEME = 'http'
-    
+    PORT = int(os.environ.get('PORT')) | 8000
+
     if os.environ.get('SECRET_KEY'):
         SECRET_KEY = os.environ.get('SECRET_KEY')
     else:
@@ -38,7 +38,6 @@ class Config:
         syslog_handler = SysLogHandler()
         syslog_handler.setLevel(logging.WARNING)
         app.logger.addHandler(syslog_handler)
-        
 
 
 config = Config
