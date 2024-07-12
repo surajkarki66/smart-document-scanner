@@ -20,7 +20,7 @@ class Config:
     TESTING = True
     APPLICATION_ROOT = '/'
     PREFERRED_URL_SCHEME = 'http'
-    PORT = int(os.environ.get('PORT')) | 8000
+    PORT = os.environ.get('PORT') if os.environ.get('PORT') else 8000
 
     if os.environ.get('SECRET_KEY'):
         SECRET_KEY = os.environ.get('SECRET_KEY')
