@@ -15,6 +15,7 @@ This is a document scanner web application along with the  feature of optical ch
     SECRET_KEY="<random>"
     DEBUG=True
     SSL_DISABLE=True
+    PORT=8000
    ```
 3. Install `Tesseract OCR` from ![here](https://tesseract-ocr.github.io/tessdoc/Installation.html)
 4. Install all the dependencies
